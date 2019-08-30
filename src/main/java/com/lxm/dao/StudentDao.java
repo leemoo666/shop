@@ -13,29 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class StudentDao implements StudentMapper {
+public class StudentDao {
 
     @Autowired
-    private SqlSessionTemplate sqlSessionTemplate;
-
+    private StudentMapper mapper;
 
     public List<Student> findAll() {
-//
-        StudentMapper mapper = sqlSessionTemplate.getMapper(StudentMapper.class);
-        return mapper.findAll();
+         return mapper.findAll();
     }
-
-//    public List<Student> findAll() {
-//        SqlSession session = DBTools.getSession();
-//        StudentMapper mapper = (StudentMapper) session.getMapper(StudentMapper.class);
-//        List<Student> all = new ArrayList();
-//        try {
-//            all = mapper.findAll();
-//            session.commit();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            session.rollback();
-//        }
-//        return all;
-//    }
 }

@@ -55,9 +55,9 @@
         </constructor-arg>
     </bean>
 
-    <!--<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="com.troy.dao"/>-->
-        <!--<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>-->
-    <!--</bean>-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.lxm"/>
+        <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
+    </bean>
 
 </beans>
